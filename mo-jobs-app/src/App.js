@@ -18,11 +18,11 @@ class App extends Component {
     }
   }
 
-  updateCompany = () => {
-    this.setState(
-      {isCompanyLoaded: true}
-    )
-  }
+  // updateCompany = () => {
+  //   this.setState(
+  //     {isCompanyLoaded: true}
+  //   )
+  // }
  
 
 

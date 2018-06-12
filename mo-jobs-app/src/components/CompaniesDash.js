@@ -19,6 +19,7 @@ fetchCompany = () => {
     .then(company => {
       this.setState({company,
                      isCompanyLoaded:true})
+      console.log('insidefetch',this.state.company)
     }
   )
     .catch((err) => console.log('err', err))
@@ -35,6 +36,9 @@ deleteCompany = (e) => {
    .then(resp => resp.json())
    .then(company => {
      console.log('didthisdelet?', company) 
+    //  const company1 = {
+    //    company: company
+    //  }
      this.setState({company})
 
    })

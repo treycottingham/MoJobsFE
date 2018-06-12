@@ -13,8 +13,8 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      data: [],
-      isDataLoaded: false,
+      company: [],
+      isCompanyLoaded: false,
       isHidden: true
     }
   }
@@ -25,26 +25,44 @@ class App extends Component {
     })
   }
 
-  componentDidMount() {
-    fetch(apiURL)
+  fetchCompany = () => {
+    const apiURL = 'http://localhost:3000/company';
+
+    return fetch(apiURL)
       .then(response => response.json())
-      .then(companies => {
-        this.setState({
-          data: companies,
-          isDataLoaded: true
-        })
+      .then(company => {
+        this.setState({company,
+                       isCompanyLoaded: true
+                        })
       })
+      .catch((err) => console.log('err', err))
   }
 
+  componentDidMount() {
+    this.fetchCompany()
+    
+  }
+
+  // componentDidMount() {
+  //   fetch(apiURL)
+  //     .then(response => response.json())
+  //     .then(companies => {
+  //       this.setState({
+  //         data: companies,
+  //         isDataLoaded: true
+  //       })
+  //     })
+  // }
+
   render() {
-    const isDataLoaded = this.state.isDataLoaded
+    const isCompanyLoaded = this.state.CompanyLoaded
     // console.log(this.state)
     return (
       <div className="App">
         <Header />
         <button onClick={(event) => {this.toggleHidden()}}>See Stats</button>
         {this.state.isHidden ? null : <Graph />}
-        {isDataLoaded && <CompaniesDash data={this.state.data} />}
+        {isCompanyLoaded && <CompaniesDash data={this.state.data} />}
         <Footer />
       </div>
     )

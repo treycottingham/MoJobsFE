@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 
 class Companies extends Component {
   render() {
-    console.log(this.props.data.map(data => data.company.cover))
     return (
       <div>
         <h1>{this.props.data.map(data => data.company.name)}</h1>
@@ -17,8 +16,8 @@ class Companies extends Component {
               <th>Description</th>
             </tr>
             <tr>
-              <td>{this.props.data.map(data => data.company.resume) ? "✓" : "X"}</td>
-              <td>{this.props.data.map(data => data.company.cover) ? "✓" : "X"}</td>
+              <td>{this.props.data.map(data => data.company.resume ? "✓" : "X")}</td>
+              <td>{this.props.data.map(data => data.company.cover ? "✓" : "X")}</td>
               <td>{this.props.data.map(data => data.company.date_applied)}</td>
               <td>{this.props.data.map(data => data.company.date_interview)}</td>
               <td>{this.props.data.map(data => data.company.description)}</td>

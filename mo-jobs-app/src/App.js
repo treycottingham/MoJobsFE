@@ -7,7 +7,7 @@ import Header from './components/Header'
 import Graph from './components/Graph'
 import CompaniesDash from './components/CompaniesDash'
 
-const apiURL = './jobs.json'
+// const apiURL = './jobs.json'
 
 class App extends Component {
   constructor(props) {
@@ -19,14 +19,25 @@ class App extends Component {
     }
   }
 
+  updateCompany = (company) =>{
+    this.setState(
+      {company}
+    )
+  }
+ 
+
+
+
   toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
 
+
   fetchCompany = () => {
-    const apiURL = 'http://localhost:3000/company';
+    // const apiURL = 'http://localhost:3000/company';
+    const apiURL = 'https://mo-jobs-database.herokuapp.com/company';
 
     return fetch(apiURL)
       .then(response => response.json())
@@ -34,7 +45,10 @@ class App extends Component {
         this.setState({company,
                        isCompanyLoaded: true
                         })
-      })
+      console.log('state', this.state.company.company)
+      console.log('true', this.state.isCompanyLoaded)
+      }
+    )
       .catch((err) => console.log('err', err))
   }
 
@@ -55,14 +69,14 @@ class App extends Component {
   // }
 
   render() {
-    const isCompanyLoaded = this.state.CompanyLoaded
+    const isCompanyLoaded = this.state.isCompanyLoaded
     // console.log(this.state)
     return (
       <div className="App">
         <Header />
         <button onClick={(event) => {this.toggleHidden()}}>See Stats</button>
         {this.state.isHidden ? null : <Graph />}
-        {isCompanyLoaded && <CompaniesDash data={this.state.data} />}
+        {isCompanyLoaded && <CompaniesDash updateCompany = {this.updateCompany} data={this.state.company.company} />}
         <Footer />
       </div>
     )

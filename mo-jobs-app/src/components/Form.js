@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 
-class Form extends Component {
+class Form extends React.Component {
     constructor(props) {
     super(props);
     this.state = {value: ''};
 
-
-
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 }
 
 handleChange(event){
-    // this.setState({value: event.target.value})
+    this.setState({value: event.target.value})
     console.log('handlechange', event.target.value)
 }
 
@@ -22,27 +22,39 @@ handleSumbit(event){
 render(){
 
     return (
-        
+
       <form onSubmit={this.handleSubmit}>
-        <label>Company Name</label>
-        <input type='text'value={this.state.value} onChange ={this.handleChange}/>
-        {/* <label>Resume</label>
-        <input type='checkbox' name='resume' value='resume'/>
-        <label>Cover Letter</label>
-        <input type='checkbox' name='coverLetter' value='coverletter'/>
-        <label>Date Applied</label>
-        <input type='date' name='dateApplied' value='dateApplied'/>
-      
-        <label>Date of Interview</label>
-        <input type='date' name='doi' value='doi'/>
-      
-        <label>Description</label>
-        <input type='text' name='description' value='description'/>
-        <label>Required Technologies</label>
-        <input type='text' name='reqTech' value='reqTech'/> */}
+        <label>
+          Company Name:
+          <input type='text' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Resume:
+          <input type='checkbox' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Cover Letter:
+          <input type='checkbox' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Date Applied:
+          <input type='date' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Date of Interview:
+          <input type='date' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Description:
+          <input type='text' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
+        <label>
+          Required Technologies:
+          <input type='text' value={this.state.value} onChange ={this.handleChange}/>
+        </label>
         <input type="submit" value="Submit"/>
       </form>
-    
+
     )
 }
 }

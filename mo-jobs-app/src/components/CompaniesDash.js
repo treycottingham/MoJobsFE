@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-
-// import JobInfo from './components/JobInfo'
+import React, { Component } from 'react';
+import Form from './Form'
 
 class Companies extends Component {
   constructor(props) {
@@ -26,24 +25,22 @@ fetchCompany = () => {
 }
 
 deleteCompany = (e) => {
-  console.log('ids', e)
-  console.log('etarget', e.target)
-  console.log('etarget', e.target.id)
+  console.log('etargetid', e.target.id)
 
-  const url = `http://localhost:3000/reviews/${e.target.id}`
-
+  const url = `https://mo-jobs-database.herokuapp.com/company/${e.target.id}`
+  
   fetch(url, {
-    method: 'delete',
-  })
-  .then(resp => resp.json())
-  .then(company => {
-    console.log('didthisdelet?', company) 
-    this.setState({company})
+     method: 'delete',
+   })
+   .then(resp => resp.json())
+   .then(company => {
+     console.log('didthisdelet?', company) 
+     this.setState({company})
 
-  })
-  .catch(function(error) {
-    console.log('error')
-  })
+   })
+   .catch(function(error) {
+     console.log('error')
+   })
   }
 
   
@@ -54,9 +51,10 @@ deleteCompany = (e) => {
 
 
   render() {
+
     const isCompanyLoaded = this.state.isCompanyLoaded
+
     return (
-    
    <div> 
       <table>
         <tr>
@@ -70,7 +68,7 @@ deleteCompany = (e) => {
         {isCompanyLoaded && this.state.company.company.map((data, index) => {
           return(
           <tr>
-          <td><button onClick = {this.deleteCompany}>Delete Company</button></td>  
+          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>  
           <td>{(data.resume ? "✓" : "X")}</td>
           <td>{(data.cover ? "✓" : "X")}</td>
           <td>{data.date_applied}</td>
@@ -85,6 +83,7 @@ deleteCompany = (e) => {
       <button>Add Job</button>
       <button>See Stats</button>        
       </div>
+      <Form/>
     </div>
 
     )

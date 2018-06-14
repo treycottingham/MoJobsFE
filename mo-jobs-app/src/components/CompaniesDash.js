@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from './Form';
 import { Link } from "react-router-dom";
 
-class Companies extends Component {
+class CompaniesDash extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -105,4 +105,4 @@ deleteCompany = (e) => {
   }
 }
 
-export default Companies;
+export default CompaniesDash;

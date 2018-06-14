@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+  background-color: plum;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+td, th {
+  border: solid 1.5px black;
 }
 
 .App-header {
@@ -14,15 +14,14 @@
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+h1 {
+  font-style: italic;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+Form {
+  display: flex;
+  color: green;
+  flex-direction: column;
+  width: 300px;
+  
 }

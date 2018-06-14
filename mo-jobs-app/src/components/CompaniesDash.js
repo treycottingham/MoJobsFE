@@ -18,7 +18,7 @@ fetchCompany = () => {
     .then(response => response.json())
     .then(company => {
       this.setState({company,
-                     isCompanyLoaded:true})
+      isCompanyLoaded:true})
       console.log('insidefetch',this.state.company)
     }
   )
@@ -97,4 +97,3 @@ deleteCompany = (e) => {
 }
 
 export default Companies;
-

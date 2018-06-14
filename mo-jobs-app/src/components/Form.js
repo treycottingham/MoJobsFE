@@ -5,13 +5,13 @@ class Form extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-                      companyName: '',
-                      resume: false,
-                      coverLetter: false,
-                      dateApplied: '',
-                      dateInterview:'',
-                      description:'',
-                      requiredTechnology:''
+                companyName: '',
+                resume: false,
+                coverLetter: false,
+                dateApplied: '',
+                dateInterview:'',
+                description:'',
+                requiredTechnology:''
     }
 }
 
@@ -82,7 +82,7 @@ handleChange = (e) => {
 render(){
 
     return (
-    <div>
+    <div className="newProspect">
        <form onSubmit={this.handleSumbit}> 
         <label>Company Name:</label>
         <input type='text' name ='companyName' value={this.state.companyName} onChange ={this.handleChange}/>      

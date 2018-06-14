@@ -22,47 +22,58 @@ class Graph extends Component {
   }
 
   update = (data) => {
-    // console.log('update',data)
     var reduced = data.reduce((acc, curr) => {
       acc.push(curr.date_applied.substr(0,10))
       return acc
     }, [])
     reduced = reduced.sort()
+
+    var dataFunction = reduced, results = {}, dateData = [], i, date;
+    for (i = 0; i < dataFunction.length; i++) {
+      date = [dataFunction[i]]
+      results[date] = results[date] || 0;
+      results[date]++;
+    }
+    for (i in results) {
+      if (results.hasOwnProperty(i)) {
+        dateData.push({date : i, counts : results[i]});
+      }
+    }
+    reduced = dateData
     console.log(reduced)
+
+    var xAxis = reduced.map(date => date.date)
+    var yAxis = reduced.map(date => date.counts)
+
+    var count = reduced
     this.setState({
         chartData: {
-          labels: reduced,
+          labels: xAxis,
           datasets: [{
             label: "Jobs Application Dates",
             backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [1,2,2,2,2,2,2,2,2,2],
+            data: yAxis,
           }]
         },
         chartOptions: {}
-      })
-    
-    // console.log(this.state.chartData.labels)
+      })    
   }
   
   componentDidMount() {
-    // console.log("compdidmount",this.props.data)
     this.update(this.props.data.company)
   }
   
   toggleHidden() {
-    // console.log('togglehidden chartdata.labels', this.state.chartData.labels)
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
   
   render() {
-    // console.log('props',this.props)
     return (
       <div>
         <button onClick={(event) => this.toggleHidden()}>View Data</button>
-        {/* <button onClick={this.toggleHidden()}>View Data</button> */}
         {this.state.isHidden ? null : <LineChart data={this.state.chartData} options={this.state.chartOptions} width="600" height="250"/>}
       </div>
     )

@@ -65,6 +65,7 @@ deleteCompany = (e) => {
       <table>
         <tr>
               <th>Delete Company</th>
+              <th>Company</th>  
               <th>Resume</th>
               <th>Cover Letter</th>
               <th>Date Applied</th>
@@ -74,11 +75,12 @@ deleteCompany = (e) => {
         {isCompanyLoaded && this.state.company.company.map((data, index) => {
           return(
           <tr>
-          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>  
+          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>
+          <td>{data.company}</td>  
           <td>{(data.resume ? "✓" : "X")}</td>
           <td>{(data.cover ? "✓" : "X")}</td>
-          <td>{data.date_applied}</td>
-          <td>{data.interview_date}</td>
+          <td>{data.date_applied.substring(0,10)}</td>
+          <td>{data.interview_date.substring(0,10)}</td>
           <td>{data.description}</td>
         </tr>
           )

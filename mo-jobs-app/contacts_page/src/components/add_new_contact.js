@@ -18,14 +18,14 @@ addContact = (g) => {
   console.log('gtargetid', g.target.id)
 
   const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${g.target.id}`
-  
+
   fetch(contactURL, {
     method: 'add',
    })
    .then(resp => resp.json())
    .then(newContact => {
-     console.log('didthisadd?', newContact) 
-  
+     console.log('didthisadd?', newContact)
+
      this.setState({newContact})
 
    })
@@ -42,7 +42,8 @@ handleSumbit(event){
 render(){
 
     return (
-      <div className="form">  
+      <div className="form">
+        <form>
         <label>
           Name:
           <input type='text' value={this.value}/>
@@ -59,6 +60,7 @@ render(){
           Date Last Interacted:
           <input type='date' value={this.value4}/>
         </label>
+      </form>
         <td><button onClick = {this.addContact}>Add New Contact</button></td>
       </div>
     )

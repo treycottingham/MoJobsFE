@@ -103,5 +103,9 @@ describe('App Tests', function () {
 
     cy.get('form').submit();
 
+    cy.get().click();
+
+    cy.url().should('be', './contact');
+
   });
 });

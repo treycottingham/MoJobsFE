@@ -1,0 +1,10 @@
+[{ "company" : {
+  "id": 0,
+  "name": "BizEats",
+  "resume": true,
+  "cover": false,
+  "date_applied": "2018-06-11",
+  "date_interview": "2018-06-22",
+  "description": "A company run by a guy with goofy hair and bad jokes"
+  } 
+}]

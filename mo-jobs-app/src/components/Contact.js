@@ -5,27 +5,31 @@ class Contact extends React.Component {
 constructor(props) {
     super(props);
     this.state = {
-      contacts: [],
+      contacts: '',
       isContactsLoaded: false
     }  
 }
 
 
 fetchContacts = () => {
-    // console.log('idinsideFetch', this.props.match.params.value)
+    console.log('ValueofCompanyID', this.props.match.params.value)
     // const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${this.props.match.params.value}`;
 
-    // const url = `http://localhost:3000/reviews/${e.target.id}`
-    const contactURL = 'https://mo-jobs-database.herokuapp.com/contact';
+    const contactURL = `http://localhost:3000/contact/${this.props.match.params.value}`
+    // const contactURL = 'https://mo-jobs-database.herokuapp.com/contact';
     
     return fetch(contactURL)
       .then(response => response.json())
       .then(contacts => {
         console.log('contactsresp', contacts)
+        // this.setState({contacts,
+        // isContactsLoaded: true
+        // })
+ 
         this.setState({contacts,
-        isContactsLoaded: true
-        })
-        console.log('contactsrespAfterstate', contacts)
+            isContactsLoaded: true
+            })
+        console.log('AFTERSTATE', this.state)
       }
 
     )
@@ -59,7 +63,7 @@ deleteContact = (e) => {
 
 componentDidMount() {
     this.fetchContacts()
-    console.log('id', this.props.match.params.value)
+    
     
     }
 
@@ -70,15 +74,14 @@ render() {
 
     return (
       <div className="chart">
-      <tr> 
+           <tr> 
               <th>Delete Contact</th>
               <th>Name</th>
               <th>Position</th>
               <th>Location Met</th>
               <th>Date Last Interacted</th>
               <th>Company</th>
-              <th>{this.props.id}</th>
-              </tr>
+            </tr>
         {isContactsLoaded && this.state.contacts.contact.map((data, index) => {
           return(
         <tr>
@@ -86,8 +89,7 @@ render() {
           <td>{(data.name)}</td>
           <td>{(data.position)}</td>
           <td>{data.location_met}</td>
-          <td>{data.date_last_interacted}</td>
-          <td>{data.company_tb_id}</td>
+          <td>{data.date_last_interacted.substring(0,10)}</td>
         </tr>
           )
         }

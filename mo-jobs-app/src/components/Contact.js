@@ -13,9 +13,9 @@ constructor(props) {
 
 fetchContacts = () => {
     console.log('ValueofCompanyID', this.props.match.params.value)
-    // const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${this.props.match.params.value}`;
+    const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${this.props.match.params.value}`;
 
-    const contactURL = `http://localhost:3000/contact/${this.props.match.params.value}`
+    // const contactURL = `http://localhost:3000/contact/${this.props.match.params.value}`
     // const contactURL = 'https://mo-jobs-database.herokuapp.com/contact';
     
     return fetch(contactURL)
@@ -80,7 +80,6 @@ render() {
               <th>Position</th>
               <th>Location Met</th>
               <th>Date Last Interacted</th>
-              <th>Company</th>
             </tr>
         {isContactsLoaded && this.state.contacts.contact.map((data, index) => {
           return(

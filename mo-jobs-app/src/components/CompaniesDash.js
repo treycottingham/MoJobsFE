@@ -11,7 +11,7 @@ class Companies extends Component {
 }
 
 fetchCompany = () => {
-  // const apiURL = 'http://localhost:3000/company';
+
   const apiURL = 'https://mo-jobs-database.herokuapp.com/company';
 
   return fetch(apiURL)
@@ -29,16 +29,14 @@ deleteCompany = (e) => {
   console.log('etargetid', e.target.id)
 
   const url = `https://mo-jobs-database.herokuapp.com/company/${e.target.id}`
-  
+
   fetch(url, {
      method: 'delete',
    })
    .then(resp => resp.json())
    .then(company => {
      console.log('didthisdelet?', company) 
-    //  const company1 = {
-    //    company: company
-    //  }
+  
      this.setState({company})
 
    })
@@ -47,6 +45,10 @@ deleteCompany = (e) => {
    })
   }
 
+  setCompany = (company) => {
+    console.log('setCompany', company)
+    this.setState({company})
+  }
   
   componentDidMount() {
     this.fetchCompany()
@@ -87,7 +89,7 @@ deleteCompany = (e) => {
       <button>Add Job</button>
       <button>See Stats</button>        
       </div>
-      <Form/>
+      <Form setCompany={this.setCompany}/>
     </div>
 
     )

@@ -20,37 +20,34 @@ post = (data) => {
 
     const url = `https://mo-jobs-database.herokuapp.com/company/`
 
-    // let content = {
-    //   company: data.companyName,
-    //   resume: data.resume,
-    //   cover_letter: data.coverLetter,
-    //   date_applied: data.dateApplied,
-    //   interview_date: dateInterview,
-    //   description: data.description,
+    let content = {
+      company: data.companyName,
+      resume: data.resume,
+      cover_letter: data.coverLetter,
+      date_applied: data.dateApplied,
+      interview_date: data.dateInterview,
+      description: data.description,
+      technologies: data.requiredTechnology
+    };
 
+    console.log('contnet', content)
 
-    // };
-
-//     console.log('contnet', content)
-//     fetch(url, {
-//       method: 'POST',
-//       body: JSON.stringify(content),
-//       headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//       }
-//     })
-//     .then(resp => resp.json())
-//     .then(allReviews => {
-//       console.log('allreviews?', allReviews) 
-//       this.setState(
-//         {allReviews}
-//       )
-//       console.log('allrevies',this.state.allReviews)
-//     })
-//     .catch(function(error) {
-//       console.log('error')
-//     })
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(content),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(resp => resp.json())
+    .then(company => {
+      console.log('response', company) 
+      this.props.setCompany(company)
+    })
+    .catch(function(error) {
+      console.log('error')
+    })
   
   }
 
@@ -59,44 +56,11 @@ handleSumbit = (e) => {
     console.log('submit_state', this.state)
     
     this.post(this.state)
-    
-    // this.props.onFormSubmit(this.state)
-    // console.log('handleSubmit',e.target)
-    // console.log('stateSubmit',this.state)
-    // this.setState({ [e.target.name]: e.target.value })
-    // this.post(this.state)
 } 
 
 handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
-    // let model = this.state.model;
-
-    // let resume = ((e.target.type == 'checkbox') && (e.target.name == 'resume'))
-    // let coverLetter = ((e.target.type == 'checkbox') && (e.target.name == 'coverLetter'))
-
-    // console.log('resume', resume)
-    // console.log('coverLetter', coverLetter)
-
-    // this.setState(
-    //     {resume,
-    //     coverLetter
-    //     }
-    // )
     
-
-    // if(e.target.type == 'checkbox') {
-
-    //   if(model[e.target.name] === false) {
-    //     model[e.target.name] = true;
-    //   } else if(model[e.target.name] === true) {
-    //     model[e.target.name] = false;
-    //   } else {
-    //     // if the property has not be defined yet it should be true
-    //     model[e.target.name] = true;
-    //   }
-    // } else {
-    //   model[e.target.name] = e.target.value;
-    // }
 
     console.log('state', this.state)
   }

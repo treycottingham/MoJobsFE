@@ -1,27 +1,45 @@
 .App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  background-color: plum;
+  /* background-image: url(https://s3.envato.com/files/238309672/White%20petals%20background%2002.jpg) */
+  background-image: url(https://i.pinimg.com/originals/06/64/d4/0664d4bb36ac661ffb068bd4a794f433.jpg);
+
+}
+table {
+  border-spacing: 3px 1rem;
+  width: 20px;
 }
 
 td, th {
   border: solid 1.5px black;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
 h1 {
   font-style: italic;
 }
 
+.stats {
+  align-items: center;
+  height: 25px;
+  width: 100px;
+}
+
 Form {
   display: flex;
-  color: green;
+  font-size: 20px;
   flex-direction: column;
   width: 300px;
-  
+  overflow: auto;
+  overflow-wrap: normal;
+  justify-content: center;
+  margin-left: 150px;
+}
+
+.check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

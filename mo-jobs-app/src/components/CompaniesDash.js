@@ -54,7 +54,7 @@ deleteCompany = (e) => {
     this.fetchCompany()
     
   }
-
+  
 
   render() {
 
@@ -88,9 +88,8 @@ deleteCompany = (e) => {
       )}
       </table>
       <div>
-      <button>Add Job</button>
-      <button>See Stats</button>        
-      </div> 
+              
+      </div>
       <Form setCompany={this.setCompany}/>
     </div>
 

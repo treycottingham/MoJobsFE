@@ -86,7 +86,10 @@ deleteCompany = (e) => {
           <td>{data.interview_date.substring(0,10)}</td>
           <td>{data.description}</td>
           <td>{data.technologies}</td>
-          <Link to="/contact" id={data.id}>Check Out Yo Dashboard</Link>
+          {/* <Link to="/contact" id={data.id}>Check Out Yo Dashboard</Link> */}
+          <Link to={`/contact/${data.id}`}>Check Out Yo Dashboard</Link>
+          {/* <Link to={`/ideas/${ this.props.testValue }`}>Create Idea</Link> */}
+
         </tr>
           )
         }

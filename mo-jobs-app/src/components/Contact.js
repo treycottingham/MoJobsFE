@@ -12,8 +12,12 @@ constructor(props) {
 
 
 fetchContacts = () => {
+    // console.log('idinsideFetch', this.props.match.params.value)
+    // const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${this.props.match.params.value}`;
 
+    // const url = `http://localhost:3000/reviews/${e.target.id}`
     const contactURL = 'https://mo-jobs-database.herokuapp.com/contact';
+    
     return fetch(contactURL)
       .then(response => response.json())
       .then(contacts => {
@@ -55,7 +59,7 @@ deleteContact = (e) => {
 
 componentDidMount() {
     this.fetchContacts()
-    // this.print(this.props)
+    console.log('id', this.props.match.params.value)
     
     }
 

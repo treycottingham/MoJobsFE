@@ -71,6 +71,8 @@ deleteCompany = (e) => {
               <th>Date Applied</th>
               <th>Date of Interview</th>
               <th>Description</th>
+              <th>Technologies</th>
+              <th>Contacts</th>
         </tr>
         {isCompanyLoaded && this.state.company.company.map((data, index) => {
           return(
@@ -82,6 +84,7 @@ deleteCompany = (e) => {
           <td>{data.date_applied.substring(0,10)}</td>
           <td>{data.interview_date.substring(0,10)}</td>
           <td>{data.description}</td>
+          <td>{data.technologies}</td>
         </tr>
           )
         }

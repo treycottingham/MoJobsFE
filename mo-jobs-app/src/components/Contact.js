@@ -49,8 +49,14 @@ deleteContact = (e) => {
       })  
 }
 
+// print = (props) => {
+// console.log('props', props)
+// }
+
 componentDidMount() {
     this.fetchContacts()
+    // this.print(this.props)
+    
     }
 
 
@@ -67,6 +73,7 @@ render() {
               <th>Location Met</th>
               <th>Date Last Interacted</th>
               <th>Company</th>
+              <th>{this.props.id}</th>
               </tr>
         {isContactsLoaded && this.state.contacts.contact.map((data, index) => {
           return(

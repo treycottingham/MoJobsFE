@@ -11,7 +11,7 @@ class Companies extends Component {
 }
 
 fetchCompany = () => {
-  // const apiURL = 'http://localhost:3000/company';
+
   const apiURL = 'https://mo-jobs-database.herokuapp.com/company';
 
   return fetch(apiURL)
@@ -29,16 +29,14 @@ deleteCompany = (e) => {
   console.log('etargetid', e.target.id)
 
   const url = `https://mo-jobs-database.herokuapp.com/company/${e.target.id}`
-  
+
   fetch(url, {
      method: 'delete',
    })
    .then(resp => resp.json())
    .then(company => {
      console.log('didthisdelet?', company) 
-    //  const company1 = {
-    //    company: company
-    //  }
+  
      this.setState({company})
 
    })
@@ -47,6 +45,10 @@ deleteCompany = (e) => {
    })
   }
 
+  setCompany = (company) => {
+    console.log('setCompany', company)
+    this.setState({company})
+  }
   
   componentDidMount() {
     this.fetchCompany()
@@ -63,6 +65,7 @@ deleteCompany = (e) => {
       <table>
         <tr>
               <th>Delete Company</th>
+              <th>Company</th>  
               <th>Resume</th>
               <th>Cover Letter</th>
               <th>Date Applied</th>
@@ -72,11 +75,12 @@ deleteCompany = (e) => {
         {isCompanyLoaded && this.state.company.company.map((data, index) => {
           return(
           <tr>
-          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>  
+          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>
+          <td>{data.company}</td>  
           <td>{(data.resume ? "✓" : "X")}</td>
           <td>{(data.cover ? "✓" : "X")}</td>
-          <td>{data.date_applied}</td>
-          <td>{data.interview_date}</td>
+          <td>{data.date_applied.substring(0,10)}</td>
+          <td>{data.interview_date.substring(0,10)}</td>
           <td>{data.description}</td>
         </tr>
           )
@@ -86,7 +90,7 @@ deleteCompany = (e) => {
       <div>
               
       </div>
-      <Form/>
+      <Form setCompany={this.setCompany}/>
     </div>
 
     )

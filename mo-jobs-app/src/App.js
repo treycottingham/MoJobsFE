@@ -24,18 +24,12 @@ class App extends Component {
   //   )
   // }
  
-
-
-
   toggleHidden() {
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
-
-
   
-
   render() {
     // const isCompanyLoaded = this.state.isCompanyLoaded
     // console.log(this.state)

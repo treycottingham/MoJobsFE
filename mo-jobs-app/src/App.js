@@ -41,7 +41,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/landing" component= {LandingPage}/>
         <Route exact path="/company" component ={CompaniesDash} updateCompany={this.updateCompany}/>
-        <Route exact path="/contact/:value" component ={Contact}/>
+        <Route exact path="/contact/" component ={Contact}/>
         </Switch>
         <Footer />
       </div>

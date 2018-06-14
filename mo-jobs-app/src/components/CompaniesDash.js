@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Form from './Form'
+import Form from './Form';
+import { Link } from "react-router-dom";
 
 class Companies extends Component {
   constructor(props) {
@@ -85,6 +86,9 @@ deleteCompany = (e) => {
           <td>{data.interview_date.substring(0,10)}</td>
           <td>{data.description}</td>
           <td>{data.technologies}</td>
+          <Link to="/contact">Check Out Yo Dashboard</Link>
+
+
         </tr>
           )
         }

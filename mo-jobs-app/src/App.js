@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <button onClick={(event) => {this.toggleHidden()}}>See Stats</button>
+        <button class='stats' onClick={(event) => {this.toggleHidden()}}>See Stats</button>
         {this.state.isHidden ? null : <Graph />}
         {/* {isCompanyLoaded && <CompaniesDash updateCompany = {this.updateCompany}/>} */}
         <CompaniesDash updateCompany = {this.updateCompany}/>}

@@ -118,29 +118,37 @@ handleChange = (e) => {
 render(){
 
     return (
-    <div className="newProspect">
+    <div>
        <form onSubmit={this.handleSumbit}> 
         <label>Company Name:</label>
-        <input type='text' name ='companyName' value={this.state.companyName} onChange ={this.handleChange}/>      
+        <textarea name ='companyName' value={this.state.companyName} onChange ={this.handleChange}/>      
+        
+        <div class="check">
         <label>Resume:</label>
         <input type='checkbox' name='resume' value={!this.state.resume} onClick = {this.onClickResume}/>
         
         <label>Cover Letter:</label>
-          <input type='checkbox' name ='coverLetter' value={this.state.coverLetter}  onClick ={this.onClickCoverLetter}/>
+        <input type='checkbox' name ='coverLetter' value={this.state.coverLetter}  onClick ={this.onClickCoverLetter}/>
+        </div>
+
         <label>Date Applied:</label>
-          <input type='date' name ='dateApplied' value={this.state.dateApplied} onChange ={this.handleChange}/>
+        <input type='date' name ='dateApplied' value={this.state.dateApplied} onChange ={this.handleChange}/>
+        
         <label>Date of Interview:</label>
-          <input type='date' name='dateInterview' value={this.state.dateInterview} onChange ={this.handleChange}/>
+        <input type='date' name='dateInterview' value={this.state.dateInterview} onChange ={this.handleChange}/>
+        
         <label>Description:</label>
-        <input type='text' name = 'description' value={this.state.description} onChange ={this.handleChange}/>
+        <textarea type='text' name = 'description' value={this.state.description} onChange ={this.handleChange}/>
+        
         <label>Required Technologies:</label>
-        <input type='text' name='requiredTechnology' value={this.state.requiredTechnology} onChange ={this.handleChange}/>
-        <input type="submit" value="Submit"/>  
+        <textarea type='text' name='requiredTechnology' value={this.state.requiredTechnology} onChange ={this.handleChange}/>
+        
+        <input type="submit" value="Add Job"/>  
       </form>
     </div> 
 
-    )
-}
+        )
+    }
 }
 
 export default Form;

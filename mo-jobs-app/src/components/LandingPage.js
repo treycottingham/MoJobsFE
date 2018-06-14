@@ -15,8 +15,9 @@ class LandingPage extends Component {
         <h3>Completely Free</h3>
         <p>Tired of getting roped in by Apps that promise to help, but then lock out features until you get the "premium package"?  So are we.  Mo Jobs, Less Probs is 100% Free,
         and we'll never ask you for money.  We've been in your shoes, and we want to help you land your dream job.  So what are you waiting for?  Let's get started!</p>
-        {/* <Link to="/company"><TheLogo src={logo} alt="logo" /></Link> */}
-        <Link to="/contact">View Contacts</Link>
+        <button>
+          <Link style={{display: 'block', height: '100%', textDecorationLine: "none", textDecorationColor: '#000000'}} to="/company">Check Out Yo Dashboard</Link>
+        </button>
       </content>
     )
   }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './Form';
+import Graph from './Graph'
 import { Link } from "react-router-dom";
 
 class CompaniesDash extends Component {
@@ -63,6 +64,7 @@ deleteCompany = (e) => {
 
     return (
    <div> 
+    {isCompanyLoaded && <Graph data={this.state.company} />}
       <table>
         <tr>
               <th>Delete Company</th>
@@ -87,7 +89,9 @@ deleteCompany = (e) => {
           <td>{data.description}</td>
           <td>{data.technologies}</td>
           {/* <Link to="/contact" id={data.id}>Check Out Yo Dashboard</Link> */}
-          <Link to={`/contact/${data.id}`}>Check Out Yo Dashboard</Link>
+          <button>
+            <Link style={{display: 'block', height: '100%', textDecorationLine: "none", textDecorationColor: '#000000', borderRadius: '5px!important'}} to={`/contact/${data.id}`}>View Contacts</Link>
+          </button>
           {/* <Link to={`/ideas/${ this.props.testValue }`}>Create Idea</Link> */}
 
         </tr>

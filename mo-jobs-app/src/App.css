@@ -1,23 +1,38 @@
+html {
+  background-image: url('https://hdwallsource.com/img/2014/6/gray-abstract-wallpaper-22098-22654-hd-wallpapers.jpg');
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  background-size: contain;
+  margin: auto;
+  text-align: center;
+}
+
+p {
+  width: 70vw;
+}
+
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  /* background-image: url(https://s3.envato.com/files/238309672/White%20petals%20background%2002.jpg) */
-  background-image: url(https://i.pinimg.com/originals/06/64/d4/0664d4bb36ac661ffb068bd4a794f433.jpg);
-
 }
+
 table {
-  border-spacing: 3px 1rem;
-  width: 20px;
+  border-spacing: 0px 1rem;
+  width: 80%;
 }
 
-td, th {
-  border: solid 1.5px black;
+td,
+th {
+  border-bottom: 1.5px solid black;
+  /* padding: 0px; */
 }
 
 h1 {
+  align-content: center;
   font-style: italic;
 }
 

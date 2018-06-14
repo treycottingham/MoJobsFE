@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import './App.css'
 
 import Footer from './components/Footer'
 import Header from './components/Header'
+import LandingPage from './components/LandingPage'
 import Graph from './components/Graph'
 import CompaniesDash from './components/CompaniesDash'
-
-// const apiURL = './jobs.json'
 
 class App extends Component {
   constructor(props) {
@@ -18,32 +18,35 @@ class App extends Component {
     }
   }
 
-  // updateCompany = () => {
-  //   this.setState(
-  //     {isCompanyLoaded: true}
-  //   )
-  // }
- 
-  toggleHidden() {
-    this.setState({
-      isHidden: !this.state.isHidden
-    })
+  updateCompany = () => {
+    this.setState(
+      {isCompanyLoaded: true}
+    )
   }
+ 
+  // toggleHidden() {
+  //   this.setState({
+  //     isHidden: !this.state.isHidden
+  //   })
+  // }
   
   render() {
     // const isCompanyLoaded = this.state.isCompanyLoaded
     // console.log(this.state)
     return (
+      <Router>
       <div className="App">
         <Header />
-        <button onClick={(event) => {this.toggleHidden()}}>See Stats</button>
-        {this.state.isHidden ? null : <Graph />}
-        {/* {isCompanyLoaded && <CompaniesDash updateCompany = {this.updateCompany}/>} */}
-        <CompaniesDash updateCompany = {this.updateCompany}/>}
+        <Switch>
+        <Route exact path="/landing" component= {LandingPage}/>
+        <Route exact path="/company" component ={CompaniesDash} updateCompany={this.updateCompany}/>
+        </Switch>
         <Footer />
       </div>
+      </Router>
     )
   }
 }
+
 export default App
 

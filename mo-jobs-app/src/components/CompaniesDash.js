@@ -90,7 +90,7 @@ deleteCompany = (e) => {
       <div>
       <button>Add Job</button>
       <button>See Stats</button>        
-      </div>
+      </div> 
       <Form setCompany={this.setCompany}/>
     </div>
 

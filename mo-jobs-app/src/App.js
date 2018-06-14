@@ -8,6 +8,7 @@ import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 import Graph from './components/Graph'
 import CompaniesDash from './components/CompaniesDash'
+import Contact from './components/Contact'
 
 class App extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ class App extends Component {
   // }
   
   render() {
-    // const isCompanyLoaded = this.state.isCompanyLoaded
+    // const isCompanyLoaded = this.state.isCompanyLoaded/
     // console.log(this.state)
     return (
       <Router>
@@ -40,6 +41,7 @@ class App extends Component {
         <Switch>
         <Route exact path="/landing" component= {LandingPage}/>
         <Route exact path="/company" component ={CompaniesDash} updateCompany={this.updateCompany}/>
+        <Route exact path="/contact/:id" component ={Contact}/>
         </Switch>
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 describe('App Tests', function () {
   it('.should() pass', function () {
 
-    cy.visit('./contact');
+    cy.visit('localhost:3000/contact');
 
     cy.get('body > div > tr > td > button').should('have.text', 'Delete').click();
 

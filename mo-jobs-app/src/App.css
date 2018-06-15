@@ -5,7 +5,12 @@ html {
   /* background-size: contain; */
   margin: auto;
   text-align: center;
+<<<<<<< Updated upstream
 }
+=======
+  /* background-image: url(https://s3.envato.com/files/238309672/White%20petals%20background%2002.jpg) */
+  /* background-image: url(https://i.pinimg.com/originals/06/64/d4/0664d4bb36ac661ffb068bd4a794f433.jpg); */
+>>>>>>> Stashed changes
 
 body {
    background: radial-gradient(circle, gray, white, gray);
@@ -52,6 +57,7 @@ Form {
   flex-direction: column;
   align-items: center;
 }
+<<<<<<< Updated upstream
 
 [class*="col-"] {
   width: 100%;
@@ -156,3 +162,5 @@ textarea {
   top:15%;
   text-align: center;
 }
+=======
+>>>>>>> Stashed changes

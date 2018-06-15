@@ -1,7 +1,7 @@
 describe('App Tests', function () {
   it('.should() pass', function () {
 
-    cy.visit('./comapny');
+    cy.visit('localhost:30000/comapny');
 
     cy.get('h1').contains('Mo Jobs, Less Probs!');
 

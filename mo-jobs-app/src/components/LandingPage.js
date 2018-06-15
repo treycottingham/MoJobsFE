@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Header } from 'semantic-ui-react';
+import { Button, Header } from 'semantic-ui-react';
 
 class LandingPage extends Component {
   render() {
     return (
-      <content>
+      <content id="landing-container">
         <Header as='h3'>Who are We?</Header>
         <p>We are 4 Geeks new to the Tech industry, who realized very quickly that keeping track of all your Resumes,
         cover letters, interviews, e-mails, contacts, etc could be a real pain.  With the average Coding school grad applying to 50+ jobs, it seemed
@@ -16,9 +16,9 @@ class LandingPage extends Component {
         <Header as='h3'>Completely Free</Header>
         <p>Tired of getting roped in by Apps that promise to help, but then lock out features until you get the "premium package"?  So are we.  Mo Jobs, Less Probs is 100% Free,
         and we'll never ask you for money.  We've been in your shoes, and we want to help you land your dream job.  So what are you waiting for?  Let's get started!</p>
-        <button>
+        <Button>
           <Link style={{display: 'block', height: '100%', textDecorationLine: "none", textDecorationColor: '#000000'}} to="/company">Check Out Yo Dashboard</Link>
-        </button>
+        </Button>
       </content>
     )
   }

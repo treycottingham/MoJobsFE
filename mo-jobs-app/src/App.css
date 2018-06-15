@@ -148,3 +148,11 @@ textarea {
   padding-left: 4.3em;
   color: rgb(155, 155, 155)
 }
+
+#landing-container {
+  width: 80%;
+  position: absolute;
+  left: 15%;
+  top:15%;
+  text-align: center;
+}

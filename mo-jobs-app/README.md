@@ -11,3 +11,12 @@
 * Company dashboard with create, read, and delete functionality
 * Graph of application submissions to let the job seeker better visualize the process
 * Contact dashboard to let job seekers track their contacts within a company
+
+## Video Walkthrough
+>https://youtu.be/BtzR3mL8qig
+
+## Live Site
+>https://mojobtake4.firebaseapp.com/company
+
+## API
+>https://mo-jobs-database.herokuapp.com/

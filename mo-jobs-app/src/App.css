@@ -1,11 +1,15 @@
 html {
-  background-image: url('https://hdwallsource.com/img/2014/6/gray-abstract-wallpaper-22098-22654-hd-wallpapers.jpg');
-  width: 100vw;
-  height: 100vh;
-  overflow: scroll;
-  background-size: contain;
+
+  height: 100%;
+  /* overflow: scroll; */
+  /* background-size: contain; */
   margin: auto;
   text-align: center;
+}
+
+body {
+   background: radial-gradient(circle, gray, white, gray);
+   background-size: auto;
 }
 
 p {
@@ -15,20 +19,10 @@ p {
 .App {
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   text-align: center;
-}
-
-table {
-  border-spacing: 0px 1rem;
   width: 80%;
-}
-
-td,
-th {
-  border-bottom: 1.5px solid black;
-  /* padding: 0px; */
 }
 
 h1 {
@@ -36,11 +30,11 @@ h1 {
   font-style: italic;
 }
 
-.stats {
+/* .stats {
   align-items: center;
   height: 25px;
   width: 100px;
-}
+} */
 
 Form {
   display: flex;
@@ -57,4 +51,100 @@ Form {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+[class*="col-"] {
+  width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .col-1 {
+    width: 8.33%;
+  }
+  .col-2 {
+    width: 16.66%;
+  }
+  .col-3 {
+    width: 25%;
+  }
+  .col-4 {
+    width: 33.33%;
+  }
+  .col-5 {
+    width: 41.66%;
+  }
+  .col-6 {
+    width: 50%;
+  }
+  .col-7 {
+    width: 58.33%;
+  }
+  .col-8 {
+    width: 66.66%;
+    position: absolute;
+    left: 14.66%;
+    top:10%;
+  }
+  .col-12 {
+    width: 100%;
+    margin-left: 0em;
+  }
+}
+
+#submit-button {
+  text-align:center;
+  margin-top: 1em;
+  width: 40%;
+  align-self: center;
+}
+
+label {
+  margin: 1em 0 .2em 0;
+}
+
+.dashboard {
+  margin: 2em;
+}
+
+#checkboxes {
+  justify-content: center;
+  
+}
+
+#checkboxes label{
+  font-weight: normal;
+  padding: 1em 0 0 0;
+}
+
+#main-header {
+  margin-top: 1.5em;
+  margin-left: 25%;
+}
+
+#contact-button {
+  margin-top: 1em;
+}
+
+#contact-table {
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 16%;
+  text-align: center;
+}
+
+input {
+  border: 1px gray solid;
+}
+/* 
+textarea {
+  background: rgb(255, 255, 255, 0.3);
+} */
+
+#transparent-input{
+  background: rgb(255, 255, 255, 0.3);
+  text-align: center;
+  padding-left: 4.3em;
+  color: rgb(155, 155, 155)
 }

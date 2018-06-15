@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Button, Form, TextArea, Input } from 'semantic-ui-react'
 
-class Form extends React.Component {
+class InputForm extends React.Component {
 
     constructor(props) {
         super(props);
@@ -82,39 +83,36 @@ handleChange = (e) => {
 render(){
 
     return (
-    <div>
-       <form onSubmit={this.handleSumbit}> 
+       <Form onSubmit={this.handleSumbit} className="col-12"> 
         <label>Company Name:</label>
-        <textarea name ='companyName' value={this.state.companyName} onChange ={this.handleChange}/>      
-        
-        <div class="check">
+        <Input type='text' name ='companyName' value={this.state.companyName} onChange ={this.handleChange} id='transparent-input'/>      
+        <Form.Group inline id="checkboxes">
+        {/* <div class="check"> */}
         <label>Resume:</label>
-        <input type='checkbox' name='resume' value={!this.state.resume} onClick = {this.onClickResume}/>
-        
+        <Form.Checkbox name='resume' value={!this.state.resume} onClick = {this.onClickResume}/>
         <label>Cover Letter:</label>
-        <input type='checkbox' name ='coverLetter' value={this.state.coverLetter}  onClick ={this.onClickCoverLetter}/>
-        </div>
+        <Form.Checkbox name ='coverLetter' value={this.state.coverLetter}  onClick ={this.onClickCoverLetter}/>
+        </Form.Group>
+        {/* </div> */}
 
         <label>Date Applied:</label>
-        <input type='date' name ='dateApplied' value={this.state.dateApplied} onChange ={this.handleChange}/>
+        <Input type='date' name ='dateApplied' value={this.state.dateApplied} onChange ={this.handleChange} id='transparent-input'/>
         
         <label>Date of Interview:</label>
-        <input type='date' name='dateInterview' value={this.state.dateInterview} onChange ={this.handleChange}/>
+        <Input type='date' name='dateInterview' value={this.state.dateInterview} onChange ={this.handleChange}  id='transparent-input'/>
         
         <label>Description:</label>
-        <textarea type='text' name = 'description' value={this.state.description} onChange ={this.handleChange}/>
+        <TextArea type='text' name = 'description' value={this.state.description} onChange ={this.handleChange} id='transparent-input'/>
         
         <label>Required Technologies:</label>
-        <textarea type='text' name='requiredTechnology' value={this.state.requiredTechnology} onChange ={this.handleChange}/>
+        <TextArea type='text' name='requiredTechnology' value={this.state.requiredTechnology} onChange ={this.handleChange} id='transparent-input'/>
         
-        <input type="submit" value="Add Job"/>  
-      </form>
-    </div> 
-
+        <Button color="blue" type="submit" id="submit-button">Add Job</Button>
+      </Form>
         )
     }
 }
 
-export default Form;
+export default InputForm;
 
   

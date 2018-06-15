@@ -1,0 +1,9 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.labeled.input {
+  background-color: @black;
+  border: @borderWidth solid @borderColor;
+  border-radius: @borderRadius !important;
+}

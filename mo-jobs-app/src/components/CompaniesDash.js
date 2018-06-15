@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Form from './Form';
 import Graph from './Graph'
 import { Link } from "react-router-dom";
+import { Table, Button } from "semantic-ui-react";
 
 class CompaniesDash extends Component {
   constructor(props) {
@@ -63,45 +64,43 @@ deleteCompany = (e) => {
     const isCompanyLoaded = this.state.isCompanyLoaded
 
     return (
-   <div> 
+   <div className="col-8 dashboard"> 
     {isCompanyLoaded && <Graph data={this.state.company} />}
-      <table>
-        <tr>
-              <th>Delete Company</th>
-              <th>Company</th>  
-              <th>Resume</th>
-              <th>Cover Letter</th>
-              <th>Date Applied</th>
-              <th>Date of Interview</th>
-              <th>Description</th>
-              <th>Technologies</th>
-              <th>Contacts</th>
-        </tr>
+      <Table basic>
+        <Table.Header>
+              <Table.Cell>Delete Company</Table.Cell>
+              <Table.Cell>Company</Table.Cell>  
+              <Table.Cell>Resume</Table.Cell>
+              <Table.Cell>Cover Letter</Table.Cell>
+              <Table.Cell>Date Applied</Table.Cell>
+              <Table.Cell>Date of Interview</Table.Cell>
+              <Table.Cell>Description</Table.Cell>
+              <Table.Cell>Technologies</Table.Cell>
+              <Table.Cell>Contacts</Table.Cell>
+        </Table.Header>
         {isCompanyLoaded && this.state.company.company.map((data, index) => {
           return(
-          <tr>
-          <td><button onClick = {this.deleteCompany} id={data.id}>Delete Company</button></td>
-          <td>{data.company}</td>  
-          <td>{(data.resume ? "✓" : "X")}</td>
-          <td>{(data.cover ? "✓" : "X")}</td>
-          <td>{data.date_applied.substring(0,10)}</td>
-          <td>{data.interview_date.substring(0,10)}</td>
-          <td>{data.description}</td>
-          <td>{data.technologies}</td>
-          {/* <Link to="/contact" id={data.id}>Check Out Yo Dashboard</Link> */}
-          <button>
-            <Link style={{display: 'block', height: '100%', textDecorationLine: "none", textDecorationColor: '#000000', borderRadius: '5px!important'}} to={`/contact/${data.id}`}>View Contacts</Link>
-          </button>
+          <Table.Body>
+            <Table.Row>
+              <Table.Cell><Button color='red' inverted onClick = {this.deleteCompany} id={data.id}>Delete Company</Button></Table.Cell>
+              <Table.Cell>{data.company}</Table.Cell>  
+              <Table.Cell>{(data.resume ? "✓" : "X")}</Table.Cell>
+              <Table.Cell>{(data.cover ? "✓" : "X")}</Table.Cell>
+              <Table.Cell>{data.date_applied.substring(0,10)}</Table.Cell>
+              <Table.Cell>{data.interview_date.substring(0,10)}</Table.Cell>
+              <Table.Cell>{data.description}</Table.Cell>
+              <Table.Cell>{data.technologies}</Table.Cell>
+              {/* <Link to="/contact" id={data.id}>Check Out Yo Dashboard</Link> */}
+              <Button color='blue' inverted id='contact-button'>
+                <Link to={`/contact/${data.id}`}>View Contacts</Link>
+              </Button>
           {/* <Link to={`/ideas/${ this.props.testValue }`}>Create Idea</Link> */}
-
-        </tr>
+          </Table.Row>
+        </Table.Body>
           )
         }
       )}
-      </table>
-      <div>
-              
-      </div>
+      </Table>
       <Form setCompany={this.setCompany}/>
     </div>
 

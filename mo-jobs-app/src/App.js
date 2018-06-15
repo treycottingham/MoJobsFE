@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // import { BrowserRouter as Router, Route, Link } from "react-router-dom"
 import './App.css'
 
-import Footer from './components/Footer'
 import Header from './components/Header'
 import LandingPage from './components/LandingPage'
 import Graph from './components/Graph'
@@ -44,7 +43,6 @@ class App extends Component {
         {/* <Route exact path="/contact" component ={Contact}/> */}
         <Route exact path="/contact/:value" component ={Contact}/>
         </Switch>
-        <Footer />
       </div>
       </Router>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
 
 var LineChart = require("react-chartjs").Line
 
@@ -72,8 +73,8 @@ class Graph extends Component {
   
   render() {
     return (
-      <div>
-        <button onClick={(event) => this.toggleHidden()}>View Data</button>
+      <div className="graph">
+        <Button color='green' inverted onClick={(event) => this.toggleHidden()}>View Data</Button>
         {this.state.isHidden ? null : <LineChart data={this.state.chartData} options={this.state.chartOptions} width="600" height="250"/>}
       </div>
     )

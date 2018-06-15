@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
+import { Header } from 'semantic-ui-react'
 
-class Header extends Component {
+class MainHeader extends Component {
   render() {
     return (
-      <header>
-        <h1>Mo' Jobs, Less Probs</h1>
-      </header>
+        <Header as='h1' id='main-header' >Mo' Jobs, Less Probs</Header>
     )
   }
 }
 
-export default Header
+export default MainHeader

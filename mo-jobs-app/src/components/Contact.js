@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button, Table } from 'semantic-ui-react'
 
 class Contact extends React.Component {
 
@@ -13,7 +14,6 @@ constructor(props) {
 
 fetchContacts = () => {
     console.log('ValueofCompanyID', this.props.match.params.value)
-    
     const contactURL = `https://mo-jobs-database.herokuapp.com/contact/${this.props.match.params.value}`;
 
     // const contactURL = `http://localhost:3000/contact/${this.props.match.params.value}`
@@ -74,28 +74,32 @@ render() {
   const isContactsLoaded = this.state.isContactsLoaded
 
     return (
-      <div className="chart">
-           <tr> 
-              <th>Delete Contact</th>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Location Met</th>
-              <th>Date Last Interacted</th>
-            </tr>
+      <Table basic id="contact-table">
+           <Table.Header> 
+              <Table.Row>
+                <Table.HeaderCell>Delete Contact</Table.HeaderCell>
+                <Table.HeaderCell>Name</Table.HeaderCell>
+                <Table.HeaderCell>Position</Table.HeaderCell>
+                <Table.HeaderCell>Location Met</Table.HeaderCell>
+                <Table.HeaderCell>Date Last Interacted</Table.HeaderCell>
+              </Table.Row>
+            </Table.Header>
         {isContactsLoaded && this.state.contacts.contact.map((data, index) => {
           return(
-        <tr>
-          <td><button onClick = {this.deleteContact} id={data.id}>Delete</button></td>  
-          <td>{(data.name)}</td>
-          <td>{(data.position)}</td>
-          <td>{data.location_met}</td>
-          <td>{data.date_last_interacted.substring(0,10)}</td>
-        </tr>
+        <Table.Header>
+          <Table.Row>
+            <Table.Cell><Button color='red' inverted onClick = {this.deleteContact} id={data.id}>Delete</Button></Table.Cell>  
+            <Table.Cell>{(data.name)}</Table.Cell>
+            <Table.Cell>{(data.position)}</Table.Cell>
+            <Table.Cell>{data.location_met}</Table.Cell>
+            <Table.Cell>{data.date_last_interacted.substring(0,10)}</Table.Cell>
+          </Table.Row>
+        </Table.Header>
           )
         }
       )}
       
-    </div>
+    </Table>
     );
   }
 }

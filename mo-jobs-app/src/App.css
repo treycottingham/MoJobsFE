@@ -5,12 +5,7 @@ html {
   /* background-size: contain; */
   margin: auto;
   text-align: center;
-<<<<<<< Updated upstream
 }
-=======
-  /* background-image: url(https://s3.envato.com/files/238309672/White%20petals%20background%2002.jpg) */
-  /* background-image: url(https://i.pinimg.com/originals/06/64/d4/0664d4bb36ac661ffb068bd4a794f433.jpg); */
->>>>>>> Stashed changes
 
 body {
    background: radial-gradient(circle, gray, white, gray);
@@ -18,7 +13,7 @@ body {
 }
 
 p {
-  width: 70vw;
+  width: 81vw;
 }
 
 .App {
@@ -27,7 +22,12 @@ p {
   /* align-items: center; */
   flex-direction: column;
   text-align: center;
-  width: 80%;
+  width: 87%;
+}
+
+#main-header {
+  margin-top: 1.5em;
+  margin-left: 19%;
 }
 
 h1 {
@@ -162,5 +162,3 @@ textarea {
   top:15%;
   text-align: center;
 }
-=======
->>>>>>> Stashed changes

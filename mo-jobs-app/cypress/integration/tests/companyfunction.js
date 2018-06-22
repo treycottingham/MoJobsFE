@@ -1,7 +1,7 @@
 describe('App Tests', function () {
   it('.should() pass', function () {
 
-    cy.visit('./company');
+    cy.visit('localhost:3000/company');
 
     cy.get('body > div > table > tr > td > button').should('have.text', 'Delete Company');
 
@@ -105,7 +105,7 @@ describe('App Tests', function () {
 
     cy.get().click();
 
-    cy.url().should('be', './contact');
+    cy.url().should('be', 'localhost:3000/contact');
 
   });
 });

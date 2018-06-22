@@ -13,7 +13,7 @@ body {
 }
 
 p {
-  width: 70vw;
+  width: 81vw;
 }
 
 .App {
@@ -22,7 +22,12 @@ p {
   /* align-items: center; */
   flex-direction: column;
   text-align: center;
-  width: 80%;
+  width: 87%;
+}
+
+#main-header {
+  margin-top: 1.5em;
+  margin-left: 19%;
 }
 
 h1 {
@@ -52,6 +57,7 @@ Form {
   flex-direction: column;
   align-items: center;
 }
+<<<<<<< Updated upstream
 
 [class*="col-"] {
   width: 100%;

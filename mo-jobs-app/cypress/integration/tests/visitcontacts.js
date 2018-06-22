@@ -1,9 +1,9 @@
 describe('App Tests', function () {
   it('.should() pass', function () {
 
-    cy.visit('./contact');
+    cy.visit('localhost:3000/contact');
 
-    cy.get('h1').contains('Mo Jobs, Less Probs!');
+    cy.get('h1').contains('Less Probs!');
 
     cy.get('body > div > tr').as('contactTitle');
 

@@ -16,7 +16,7 @@
 >https://youtu.be/BtzR3mL8qig
 
 ## Live Site
->https://mojobtake4.firebaseapp.com/company
+>https://mojobtake4.firebaseapp.com/landing
 
 ## API
 >https://mo-jobs-database.herokuapp.com/

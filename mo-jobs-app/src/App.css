@@ -125,7 +125,7 @@ label {
 
 #main-header {
   margin-top: 1.5em;
-  margin-left: 15%;
+  margin-left: 25%;
 }
 
 #contact-button {
@@ -158,7 +158,7 @@ textarea {
 #landing-container {
   width: 80%;
   position: absolute;
-  left: 10%;
+  left: 15%;
   top:15%;
   text-align: center;
 }
